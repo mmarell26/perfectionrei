@@ -938,7 +938,71 @@
             </button>
           </form>
         </div>
+<!-- ========================= -->
+<!-- NEW DEAL SUBMISSION FORM -->
+<!-- ========================= -->
 
+<section id="submit-deal" style="padding:60px 0; border-top:1px solid #333; margin-top:40px;">
+    <h2 style="color:#f5b953; font-size:32px; margin-bottom:20px;">Submit a Deal or Inquiry</h2>
+
+    <p style="max-width:650px; color:#ddd; margin-bottom:25px;">
+        Submit off-market opportunities or multifamily deals (4–20 units).  
+        Provide the address, current rents, seller details, and we’ll underwrite it quickly.
+    </p>
+
+    <form action="https://formsubmit.co/malik@perfectionrei.com" method="POST" style="max-width:620px;">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Deal Submission from PerfectionREI.com">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- Name + Email -->
+        <div style="display:flex; gap:16px; margin-bottom:15px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:220px;">
+                <label style="color:#ccc;">Your Name</label>
+                <input type="text" name="name" required 
+                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
+            </div>
+
+            <div style="flex:1; min-width:220px;">
+                <label style="color:#ccc;">Your Email</label>
+                <input type="email" name="email" required 
+                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
+            </div>
+        </div>
+
+        <!-- Property Address -->
+        <label style="color:#ccc;">Property Address</label>
+        <input type="text" name="address" required
+               style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555; margin-bottom:15px;">
+
+        <!-- Units + Asking Price -->
+        <div style="display:flex; gap:16px; margin-bottom:15px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:220px;">
+                <label style="color:#ccc;"># Units</label>
+                <input type="text" name="units" 
+                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
+            </div>
+
+            <div style="flex:1; min-width:220px;">
+                <label style="color:#ccc;">Asking Price (optional)</label>
+                <input type="text" name="price" 
+                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <label style="color:#ccc;">Notes, rents, seller details, or anything helpful</label>
+        <textarea name="notes" rows="6"
+                  style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555; margin-bottom:20px;"></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit"
+                style="background:#f5b953; color:#111; padding:12px 28px; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">
+            Submit Deal
+        </button>
+    </form>
+</section>
         <div class="contact-meta">
           <p><strong>Direct contact</strong></p>
           <p>
@@ -956,15 +1020,12 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    © <span id="year"></span> Perfection Real Estate Investors LLC. All rights reserved.
-  </footer>
 </div>
+</main>
 
-<script>
-  // Set current year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
+
+
+
 </script>
 </body>
 </html>
