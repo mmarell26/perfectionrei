@@ -1,0 +1,425 @@
+<!-- /offers/index.html  |  Perfection REI — Deal Vault (copy/paste entire file) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deal Vault | Perfection REI</title>
+
+  <style>
+    :root{
+      --bg:#020308;
+      --panel:rgba(255,255,255,0.06);
+      --panel2:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.12);
+      --text:#f9fafb;
+      --muted:#cbd5f5;
+      --gold:#f4c46a;
+      --gold2:#e6a93c;
+      --shadow:0 32px 80px rgba(0,0,0,0.65);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(21,27,54,0.85) 0%, rgba(2,3,8,1) 55%),
+        radial-gradient(circle at 20% 30%, rgba(244,196,106,0.10) 0%, transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(244,196,106,0.08) 0%, transparent 55%);
+      color:var(--text);
+      padding:42px 16px;
+    }
+
+    .wrap{width:100%; max-width:980px; margin:0 auto;}
+    .topbar{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand .kicker{
+      font-size:12px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      opacity:.9;
+    }
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+    }
+    .brand h1 span{color:var(--gold)}
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.25);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:800;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(244,196,106,0.55)}
+    .btnGold{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      border:none;
+      color:#1a1a1a;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .vaultMeta{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .metaLine{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+    .metaLine strong{color:var(--gold)}
+    .notice{
+      background:rgba(244,196,106,0.10);
+      border:1px solid rgba(244,196,106,0.28);
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:13px;
+      color:var(--text);
+      line-height:1.45;
+    }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin:18px 0 10px;
+    }
+    .search{
+      flex:1;
+      min-width:240px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:14px;
+      background:var(--panel2);
+      border:1px solid var(--border);
+    }
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      color:var(--text);
+      font-size:14px;
+    }
+    .pills{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.18);
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill.active{
+      border-color:rgba(244,196,106,0.55);
+      background:rgba(244,196,106,0.12);
+      color:var(--text);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (min-width: 820px){
+      .grid{grid-template-columns:1fr 1fr;}
+    }
+
+    .deal{
+      background:rgba(0,0,0,0.18);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      transition:transform .12s ease, border-color .12s ease;
+      min-height:170px;
+    }
+    .deal:hover{
+      transform:translateY(-2px);
+      border-color:rgba(244,196,106,0.45);
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:12px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.25);
+      letter-spacing:0.02em;
+    }
+    .badge.available{border-color:rgba(90,220,140,0.35); background:rgba(90,220,140,0.10);}
+    .badge.under{border-color:rgba(244,196,106,0.55); background:rgba(244,196,106,0.12);}
+    .badge.sold{border-color:rgba(255,255,255,0.22); background:rgba(255,255,255,0.06); opacity:0.9;}
+
+    .deal h3{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-0.01em;
+      line-height:1.2;
+    }
+    .deal .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:auto;
+    }
+    .stat{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:14px;
+      padding:10px 10px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.2;
+    }
+    .stat strong{
+      display:block;
+      color:var(--text);
+      font-size:13px;
+      margin-top:4px;
+      font-weight:900;
+    }
+
+    .dealActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .linkBtn{
+      flex:1;
+      min-width:140px;
+      text-align:center;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.22);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:900;
+      font-size:13px;
+      cursor:pointer;
+      transition:transform .12s ease;
+    }
+    .linkBtn:hover{transform:translateY(-1px)}
+    .linkBtn.gold{
+      border:none;
+      color:#1a1a1a;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+    }
+
+    .foot{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      opacity:0.95;
+    }
+    .foot a{color:var(--gold); text-decoration:none; font-weight:900;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="kicker">Perfection REI • Private Inventory</div>
+        <h1>Deal <span>Vault</span></h1>
+      </div>
+      <div class="ctaRow">
+        <a class="btn" href="/nda.html">NDA</a>
+        <a class="btn btnGold" href="/offer.html">Submit an Offer</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="vaultMeta">
+        <div class="metaLine">
+          Access is limited to serious buyers. Some pages are <strong>NDA-gated</strong>.
+        </div>
+        <div class="notice">
+          Tip: Share the direct deal link (example: <strong>/offers/123-main-st.html</strong>). If a buyer hasn’t signed the NDA,
+          they’ll be redirected automatically.
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="search">
+          <span style="opacity:.85;">🔎</span>
+          <input id="search" type="text" placeholder="Search by address, city, or notes…" autocomplete="off" />
+        </div>
+
+        <div class="pills">
+          <div class="pill active" data-filter="all">All</div>
+          <div class="pill" data-filter="available">Available</div>
+          <div class="pill" data-filter="under">Under Contract</div>
+          <div class="pill" data-filter="sold">Sold</div>
+        </div>
+      </div>
+
+      <!-- DEAL GRID -->
+      <div class="grid" id="grid">
+
+        <!-- DEAL CARD (edit values + duplicate for each property) -->
+        <div class="deal" data-status="available" data-search="123 main st philadelphia pa 191xx off-market value-add">
+          <div class="row">
+            <div class="badge available">AVAILABLE</div>
+            <div style="color:var(--muted); font-size:12px;">NDA Required</div>
+          </div>
+
+          <h3>123 Main St — Philadelphia, PA</h3>
+          <p class="sub">Off-market value-add opportunity. Clean title. Quick close preferred.</p>
+
+          <div class="stats">
+            <div class="stat">Asking<strong>$149,900</strong></div>
+            <div class="stat">ARV<strong>$245,000</strong></div>
+          </div>
+
+          <div class="dealActions">
+            <a class="linkBtn" href="/nda.html?deal=/offers/123-main-st.html">View (NDA Gate)</a>
+            <a class="linkBtn gold" href="/offer.html">Submit Offer</a>
+          </div>
+        </div>
+        <!-- /DEAL CARD -->
+
+        <!-- EXAMPLE: duplicate + edit for more deals (optional)
+        <div class="deal" data-status="under" data-search="456 oak ave camden nj brick duplex">
+          <div class="row">
+            <div class="badge under">UNDER CONTRACT</div>
+            <div style="color:var(--muted); font-size:12px;">NDA Required</div>
+          </div>
+          <h3>456 Oak Ave — Camden, NJ</h3>
+          <p class="sub">Brick duplex, strong rents, light rehab.</p>
+          <div class="stats">
+            <div class="stat">Asking<strong>$210,000</strong></div>
+            <div class="stat">ARV<strong>$310,000</strong></div>
+          </div>
+          <div class="dealActions">
+            <a class="linkBtn" href="/nda.html?deal=/offers/456-oak-ave.html">View (NDA Gate)</a>
+            <a class="linkBtn gold" href="/offer.html">Submit Offer</a>
+          </div>
+        </div>
+        -->
+
+      </div>
+
+      <div class="foot">
+        Confidential inventory • <a href="/nda.html">NDA</a> required for deal details • Direct to acquisitions
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple search + status filter for Deal Vault
+    const searchEl = document.getElementById('search');
+    const grid = document.getElementById('grid');
+    const pills = Array.from(document.querySelectorAll('.pill'));
+
+    let activeFilter = 'all';
+
+    function applyFilters(){
+      const q = (searchEl.value || '').trim().toLowerCase();
+      const deals = Array.from(grid.querySelectorAll('.deal'));
+
+      deals.forEach(card => {
+        const status = card.getAttribute('data-status');
+        const hay = (card.getAttribute('data-search') || '').toLowerCase();
+
+        const matchStatus = (activeFilter === 'all') ? true : (status === activeFilter);
+        const matchSearch = q.length === 0 ? true : hay.includes(q);
+
+        card.style.display = (matchStatus && matchSearch) ? 'flex' : 'none';
+      });
+    }
+
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        activeFilter = p.getAttribute('data-filter');
+        applyFilters();
+      });
+    });
+
+    searchEl.addEventListener('input', applyFilters);
+    applyFilters();
+  </script>
+</body>
+</html>
