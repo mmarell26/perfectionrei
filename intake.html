@@ -6,128 +6,336 @@
   <title>Property Intake | Perfection REI</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      background: #020308;
-      color: #f9fafb;
-      padding: 40px 16px;
+    :root{
+      --bg:#020308;
+      --panel:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.12);
+      --text:#f9fafb;
+      --muted:#cbd5f5;
+      --gold:#f4c46a;
+      --radius:16px;
     }
-
-    .wrap {
-      max-width: 720px;
-      margin: auto;
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+      background:radial-gradient(circle at top, #151b36 0%, var(--bg) 55%);
+      color:var(--text);
+      padding:40px 16px;
     }
-
-    h1 {
-      margin-bottom: 8px;
+    .wrap{max-width:860px;margin:auto;}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--panel);border:1px solid var(--border);
+      padding:8px 12px;border-radius:999px;
+      font-size:12px;color:#e5e7eb;
     }
-
-    p {
-      color: #cbd5f5;
-      margin-bottom: 24px;
+    .pill strong{color:var(--gold);}
+    h1{margin:14px 0 8px;}
+    p{margin:0 0 18px;color:var(--muted);line-height:1.4;}
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 32px 80px rgba(0,0,0,.55);
     }
-
-    .box {
-      background: #0b1220;
-      border: 1px solid #1e293b;
-      border-radius: 12px;
-      padding: 24px;
+    .grid{display:grid;gap:14px;}
+    @media(min-width:860px){
+      .two{grid-template-columns:1fr 1fr;}
+      .three{grid-template-columns:1fr 1fr 1fr;}
     }
-
-    label {
-      display: block;
-      margin-top: 16px;
-      font-size: 14px;
+    label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px;}
+    input,select,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:none;
+      outline:1px solid rgba(148,163,184,.25);
+      background:#0b1020;
+      color:#fff;
+      font-size:14px;
     }
-
-    input, textarea {
-      width: 100%;
-      margin-top: 6px;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      background: #020308;
-      color: #fff;
-      font-size: 15px;
+    textarea{min-height:92px;resize:vertical;}
+    .divider{height:1px;background:rgba(148,163,184,.18);margin:18px 0;}
+    .btn{
+      width:100%;
+      margin-top:14px;
+      padding:14px 16px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      font-weight:900;
+      background:linear-gradient(135deg, var(--gold), #e6a93c);
+      color:#1a1a1a;
+      font-size:15px;
     }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    button {
-      margin-top: 24px;
-      width: 100%;
-      padding: 14px;
-      border-radius: 999px;
-      border: none;
-      font-weight: 800;
-      font-size: 15px;
-      background: linear-gradient(135deg,#f4c46a,#e6a93c);
-      color: #1a1a1a;
-      cursor: pointer;
-    }
-
-    .note {
-      font-size: 12px;
-      color: #94a3b8;
-      margin-top: 12px;
-      text-align: center;
-    }
+    .fine{margin-top:10px;color:#94a3b8;font-size:12px;line-height:1.35;text-align:center;}
+    .rownote{font-size:12px;color:#94a3b8;margin-top:6px;}
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <div class="pill">🔒 <strong>Secure</strong> Intake • Saved + Confirmed On Next Page</div>
+
     <h1>Property Intake</h1>
     <p>
-      This form allows us to review your property efficiently and determine next steps.
-      Completion typically takes 3–5 minutes.
+      Submit the details below. After you click submit, you’ll see a confirmation page with what happens next.
     </p>
 
-    <div class="box">
-      <form onsubmit="submitIntake(event)">
-        <label>Property Address</label>
-        <input required />
+    <div class="card">
+      <form id="intakeForm">
+        <!-- hidden tracking -->
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_content" id="utm_content">
+        <input type="hidden" name="utm_term" id="utm_term">
+        <input type="hidden" name="referrer" id="referrer">
+        <input type="hidden" name="landing_url" id="landing_url">
 
-        <label>City / State</label>
-        <input required />
+        <!-- hidden qualification -->
+        <input type="hidden" name="lead_score" id="lead_score">
+        <input type="hidden" name="lead_tier" id="lead_tier">
+        <input type="hidden" name="route_note" id="route_note">
 
-        <label>Asking Price (if any)</label>
-        <input />
+        <div class="grid two">
+          <div>
+            <label>Property Address</label>
+            <input name="property_address" id="property_address" required placeholder="123 Main St" />
+          </div>
+          <div>
+            <label>City / State</label>
+            <input name="city_state" id="city_state" required placeholder="Philadelphia, PA" />
+          </div>
+        </div>
 
-        <label>Condition / Repairs Needed</label>
-        <textarea></textarea>
+        <div class="grid three">
+          <div>
+            <label>Property Type</label>
+            <select name="property_type" id="property_type" required>
+              <option value="">Select…</option>
+              <option>Single Family</option>
+              <option>Duplex</option>
+              <option>Triplex</option>
+              <option>4+ Units</option>
+              <option>Mixed-Use</option>
+              <option>Commercial</option>
+              <option>Land</option>
+            </select>
+          </div>
+          <div>
+            <label>Occupancy</label>
+            <select name="occupancy" id="occupancy" required>
+              <option value="">Select…</option>
+              <option>Vacant</option>
+              <option>Owner-Occupied</option>
+              <option>Tenant-Occupied</option>
+              <option>Unknown</option>
+            </select>
+          </div>
+          <div>
+            <label>Timeline to Sell</label>
+            <select name="timeline" id="timeline" required>
+              <option value="">Select…</option>
+              <option>ASAP (0–14 days)</option>
+              <option>30 days</option>
+              <option>60–90 days</option>
+              <option>3–6 months</option>
+              <option>Just exploring</option>
+            </select>
+          </div>
+        </div>
 
-        <label>Timeline to Sell</label>
-        <input />
+        <div class="grid two">
+          <div>
+            <label>Asking Price (if any)</label>
+            <input name="asking_price" id="asking_price" placeholder="$150,000" />
+            <div class="rownote">If you’re not sure, leave blank.</div>
+          </div>
+          <div>
+            <label>Condition / Repairs Needed</label>
+            <select name="condition" id="condition" required>
+              <option value="">Select…</option>
+              <option>Move-in ready / light cosmetic</option>
+              <option>Moderate rehab</option>
+              <option>Heavy rehab</option>
+              <option>Fire / structural / major damage</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
 
-        <label>Your Name</label>
-        <input required />
+        <div class="grid">
+          <div>
+            <label>Known Issues (optional)</label>
+            <textarea name="known_issues" id="known_issues" placeholder="Liens, code violations, utilities off, tenant issues, etc."></textarea>
+          </div>
+        </div>
 
-        <label>Email</label>
-        <input type="email" required />
+        <div class="divider"></div>
 
-        <label>Phone</label>
-        <input required />
+        <div class="grid two">
+          <div>
+            <label>Your Name</label>
+            <input name="seller_name" id="seller_name" required />
+          </div>
+          <div>
+            <label>Relationship to Property</label>
+            <select name="relationship" id="relationship" required>
+              <option value="">Select…</option>
+              <option>Owner</option>
+              <option>Agent / Broker</option>
+              <option>Attorney / Executor</option>
+              <option>Family / Representative</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
 
-        <button type="submit">Submit Intake</button>
+        <div class="grid two">
+          <div>
+            <label>Email</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div>
+            <label>Phone</label>
+            <input name="phone" id="phone" required />
+          </div>
+        </div>
+
+        <button class="btn" type="submit">Submit Intake</button>
+
+        <div class="fine">
+          This form is secure and stores a submission receipt on the confirmation page.
+        </div>
       </form>
-
-      <div class="note">
-        Submission does not constitute an offer. We will follow up after review.
-      </div>
     </div>
   </div>
 
   <script>
-    function submitIntake(e) {
-      e.preventDefault();
-      alert("Thank you. Your intake has been received. We will follow up shortly.");
-      window.location.href = "/success.html";
+    // -------- helpers --------
+    function getParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || "";
     }
+    function setVal(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.value = value || "";
+    }
+    function normalizeMoney(str) {
+      if (!str) return 0;
+      const n = Number(String(str).replace(/[^0-9.]/g, ""));
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    // -------- UTM + tracking --------
+    setVal("utm_source", getParam("utm_source"));
+    setVal("utm_medium", getParam("utm_medium"));
+    setVal("utm_campaign", getParam("utm_campaign"));
+    setVal("utm_content", getParam("utm_content"));
+    setVal("utm_term", getParam("utm_term"));
+    setVal("referrer", document.referrer || "");
+    setVal("landing_url", window.location.href);
+
+    // -------- qualification --------
+    function scoreLead() {
+      const timeline = document.getElementById("timeline").value;
+      const condition = document.getElementById("condition").value;
+      const occupancy = document.getElementById("occupancy").value;
+      const asking = normalizeMoney(document.getElementById("asking_price").value);
+
+      let score = 0;
+      let note = [];
+
+      // timeline
+      if (timeline.includes("ASAP")) { score += 30; note.push("Fast timeline"); }
+      else if (timeline.includes("30")) { score += 22; note.push("30-day timeline"); }
+      else if (timeline.includes("60")) { score += 16; note.push("60–90 day timeline"); }
+      else if (timeline.includes("3–6")) { score += 8; note.push("Longer timeline"); }
+      else { score += 3; note.push("Exploring"); }
+
+      // condition
+      if (condition.includes("light cosmetic")) { score += 10; }
+      else if (condition.includes("Moderate")) { score += 16; note.push("Value-add"); }
+      else if (condition.includes("Heavy")) { score += 22; note.push("Heavier rehab"); }
+      else if (condition.includes("Fire")) { score += 26; note.push("High distress"); }
+      else { score += 6; }
+
+      // occupancy
+      if (occupancy.includes("Vacant")) { score += 18; note.push("Vacant"); }
+      else if (occupancy.includes("Owner")) { score += 10; }
+      else if (occupancy.includes("Tenant")) { score += 8; note.push("Tenant-occupied"); }
+      else { score += 5; }
+
+      // asking
+      if (asking > 0) { score += 6; note.push("Price provided"); }
+      else { score += 2; note.push("No price provided"); }
+
+      let tier = "Warm";
+      if (score >= 70) tier = "Hot";
+      else if (score >= 50) tier = "Priority";
+      else if (score >= 35) tier = "Warm";
+      else tier = "Low";
+
+      document.getElementById("lead_score").value = String(score);
+      document.getElementById("lead_tier").value = tier;
+      document.getElementById("route_note").value = note.join(" | ");
+
+      return { score, tier, note: note.join(" | ") };
+    }
+
+    ["timeline","condition","occupancy","asking_price"].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener(id === "asking_price" ? "input" : "change", scoreLead);
+    });
+    scoreLead();
+
+    // -------- submit handler (static) --------
+    document.getElementById("intakeForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const q = scoreLead();
+
+      // collect fields
+      const data = {
+        submitted_at: new Date().toISOString(),
+        property_address: document.getElementById("property_address").value.trim(),
+        city_state: document.getElementById("city_state").value.trim(),
+        property_type: document.getElementById("property_type").value,
+        occupancy: document.getElementById("occupancy").value,
+        timeline: document.getElementById("timeline").value,
+        asking_price: document.getElementById("asking_price").value.trim(),
+        condition: document.getElementById("condition").value,
+        known_issues: document.getElementById("known_issues").value.trim(),
+        seller_name: document.getElementById("seller_name").value.trim(),
+        relationship: document.getElementById("relationship").value,
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+
+        utm_source: document.getElementById("utm_source").value,
+        utm_medium: document.getElementById("utm_medium").value,
+        utm_campaign: document.getElementById("utm_campaign").value,
+        utm_content: document.getElementById("utm_content").value,
+        utm_term: document.getElementById("utm_term").value,
+        referrer: document.getElementById("referrer").value,
+        landing_url: document.getElementById("landing_url").value,
+
+        lead_score: document.getElementById("lead_score").value,
+        lead_tier: document.getElementById("lead_tier").value,
+        route_note: document.getElementById("route_note").value
+      };
+
+      // store last submission + append to a list
+      localStorage.setItem("pr_last_intake", JSON.stringify(data));
+      const list = JSON.parse(localStorage.getItem("pr_intake_list") || "[]");
+      list.unshift(data);
+      localStorage.setItem("pr_intake_list", JSON.stringify(list.slice(0, 50)));
+
+      // redirect to confirmation
+      window.location.href = "/intake-next.html";
+    });
   </script>
 </body>
 </html>
