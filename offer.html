@@ -1,48 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Submit an Offer | Perfection REI</title>
-  <meta name="description" content="Submit an offer or express interest in Perfection REI investment opportunities.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg1: #0b0f1f;
+      --bg2: #020308;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f9fafb;
+      --muted: #cbd5f5;
+      --gold: #f4c46a;
+      --shadow: 0 32px 80px rgba(0,0,0,0.65);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at top, #151b36 0%, var(--bg2) 55%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .offer-page {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .offer-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-size: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #f4c46a, #eab54f);
+      color: #1a1a1a;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    .trust {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
+  <div class="offer-page">
+    <div class="offer-card">
+      <h1>Submit Your Offer</h1>
+      <p class="subtitle">
+        Serious buyers only. All offers are reviewed within 24 hours.
+      </p>
 
-  <h1>Submit Your Offer</h1>
+      <form action="https://formsubmit.co/malik@perfectionrei.com" method="POST">
+        <input type="hidden" name="_subject" value="New Offer Submitted">
+        <input type="hidden" name="_next" value="https://perfectionrei.com/success.html">
 
-  <p>
-    Interested in this deal? Submit your offer below.
-    Serious buyers only.
-  </p>
+        <label>Full Name</label>
+        <input type="text" name="name" required>
 
-  <!-- Offer Form -->
-  <form action="https://formsubmit.co/malik@perfectionrei.com method="POST">
+        <label>Email</label>
+        <input type="email" name="email" required>
 
-    <input type="hidden" name="_subject" value="New Offer Submitted">
-    <input type="hidden" name="_next" value="https://perfectionrei.com/success.html">
+        <label>Phone</label>
+        <input type="tel" name="phone" required>
 
-    <label>Full Name</label><br>
-    <input type="text" name="name" required><br><br>
+        <label>Offer Price ($)</label>
+        <input type="number" name="offer" required>
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+        <label>Proof of Funds Available?</label>
+        <select name="proof_of_funds" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 
-    <label>Phone</label><br>
-    <input type="tel" name="phone"><br><br>
+        <button type="submit">Submit Offer</button>
+      </form>
 
-    <label>Offer Price ($)</label><br>
-    <input type="number" name="offer_price" required><br><br>
-
-    <label>Proof of Funds (Yes / No)</label><br>
-    <select name="proof_of_funds" required>
-      <option value="">Select</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select><br><br>
-
-    <button type="submit">Submit Offer</button>
-
-  </form>
-
+      <p class="trust">
+        🔒 Confidential · No spam · Direct to acquisitions
+      </p>
+    </div>
+  </div>
 </body>
 </html>
