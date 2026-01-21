@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit an Offer | Perfection REI</title>
+  <meta name="description" content="Submit an offer or express interest in Perfection REI investment opportunities.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <h1>Submit Your Offer</h1>
+
+  <p>
+    Interested in this deal? Submit your offer below.
+    Serious buyers only.
+  </p>
+
+  <!-- Offer Form -->
+  <form action="https://formsubmit.co/malik@perfectionrei.com method="POST">
+
+    <input type="hidden" name="_subject" value="New Offer Submitted">
+    <input type="hidden" name="_next" value="https://perfectionrei.com/success.html">
+
+    <label>Full Name</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Phone</label><br>
+    <input type="tel" name="phone"><br><br>
+
+    <label>Offer Price ($)</label><br>
+    <input type="number" name="offer_price" required><br><br>
+
+    <label>Proof of Funds (Yes / No)</label><br>
+    <select name="proof_of_funds" required>
+      <option value="">Select</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br><br>
+
+    <button type="submit">Submit Offer</button>
+
+  </form>
+
+</body>
+</html>
