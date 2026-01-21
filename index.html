@@ -1,1033 +1,425 @@
+<!-- /offers/index.html  |  Perfection REI — Deal Vault (copy/paste entire file) -->
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="icon" href="perfectionrei_favicon.png" type="image/png" />
+<head>
   <meta charset="UTF-8" />
-  <title>Perfection REI | Property Investment Company in Philadelphia, PA</title>
-<meta name="keywords" content="property investment company, real estate investor Philadelphia, multifamily investing Philadelphia, off-market deals, sell my house fast Philadelphia, commercial real estate investor, Perfection REI" />
-  <meta name="description" content="Perfection REI is a trusted property investment company based in Philadelphia, PA. We buy houses in any condition and specialize in multifamily, commercial, and off-market real estate opportunities for sellers and investors." />
-  <meta property="og:title" content="Perfection Real Estate Investors">
-  <meta property="og:description" content="Precision real estate for serious investors. Multifamily acquisitions, off-market deals, underwriting, and operator-first strategy.">
-  <meta property="og:url" content="https://perfectionrei.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://perfectionrei.com/og-image.jpg">
-
-  <meta name="twitter:card" content="summary_large_image">
-<!-- SEO ENHANCEMENTS -->
-<meta name="author" content="Perfection Real Estate Investors LLC">
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-
-
-
-
-<!-- Open Graph for Social & Google -->
-<meta property="og:title" content="Perfection Real Estate Investors | Multifamily Acquisitions & Off-Market Deals">
-<meta property="og:description" content="Precision real estate for serious investors. We source, underwrite, and acquire 4-20 unit multifamily deals in Philadelphia.">
-<meta property="og:url" content="https://perfectionrei.com/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://perfectionrei.com/og-image.jpg"> <!-- we will generate this -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Perfection REI | Multifamily Investments">
-<meta name="twitter:description" content="Direct-to-owner multifamily acquisitions. Operator-first deal execution.">
-  <!-- When you add a real favicon file named favicon.ico to the repo root, this will start working -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deal Vault | Perfection REI</title>
 
   <style>
-    :root {
-      --bg-soft: #050711;
-      --bg-deep: #020308;
-      --bg-panel: #0b0f1f;
-      --accent-gold: #f4c46a;
-      --accent-gold-soft: rgba(244, 196, 106, 0.16);
-      --accent-pill: rgba(244, 196, 106, 0.2);
-      --text-main: #f9fafb;
-      --text-soft: #cbd5f5;
-      --text-muted: #7c859d;
-      --border-subtle: rgba(148, 163, 184, 0.25);
-      --danger: #ff5c5c;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 32px 80px rgba(0, 0, 0, 0.65);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Helvetica Neue", Arial, sans-serif;
-      background: radial-gradient(circle at top, #151b36 0, #020308 55%);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* NAVBAR */
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(
-        to bottom,
-        rgba(2, 3, 8, 0.96),
-        rgba(2, 3, 8, 0.75),
-        transparent
-      );
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-    }
-
-    .nav-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo-circle {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 15%, #fff7d1 0, #f4c46a 35%, #b3822a 90%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5),
-                  0 0 24px rgba(244, 196, 106, 0.7);
-      font-weight: 800;
-      font-size: 14px;
-      color: #1b1303;
-      letter-spacing: 0.08em;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .logo-name {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .logo-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .nav-links a {
-      color: var(--text-soft);
-      padding-bottom: 4px;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-gold);
-      border-color: var(--accent-gold-soft);
-    }
-
-    .nav-cta {
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(244, 196, 106, 0.6);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      background: radial-gradient(circle at top, rgba(244, 196, 106, 0.15), transparent);
-    }
-
-    .nav-cta:hover {
-      background: rgba(244, 196, 106, 0.2);
-    }
-
-    /* MAIN LAYOUT */
-
-    main {
-      flex: 1;
-    }
-
-    .hero-shell {
-      max-width: 1120px;
-      margin: 40px auto 72px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 26px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: linear-gradient(
-        135deg,
-        rgba(244, 196, 106, 0.25),
-        rgba(15, 23, 42, 0.9)
-      );
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 10px rgba(244, 196, 106, 0.9);
-    }
-
-    .hero-title {
-      margin-top: 18px;
-      font-size: clamp(2.4rem, 4vw, 3.1rem);
-      line-height: 1.05;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-title span {
-      color: var(--accent-gold);
-    }
-
-    .hero-sub {
-      margin-top: 16px;
-      font-size: 0.98rem;
-      max-width: 520px;
-      color: var(--text-soft);
-    }
-
-    .hero-sub strong {
-      color: #e5e7ff;
-      font-weight: 600;
-    }
-
-    .hero-tags {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .hero-tag {
-      border-radius: var(--radius-pill);
-      padding: 6px 11px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .hero-actions {
-      margin-top: 26px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .btn-main {
-      padding: 13px 22px;
-      border-radius: var(--radius-pill);
-      border: none;
-      background: linear-gradient(135deg, #f4c46a, #f59e0b);
-      color: #1b1303;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-    }
-
-    .btn-main:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.85);
-    }
-
-    .btn-ghost {
-      padding: 11px 18px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.95);
-      color: var(--text-soft);
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent-gold);
-      color: var(--accent-gold);
-    }
-
-    .hero-footnote {
-      margin-top: 14px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .hero-footnote span {
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    /* DEAL SNAPSHOT CARD */
-
-    .panel {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top left, #1e293b, #020617 58%);
-      padding: 18px 18px 20px 18px;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .panel-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: baseline;
-    }
-
-    .panel-title {
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-    }
-
-    .panel-chip {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-muted);
-    }
-
-    .snapshot-grid {
-      margin-top: 6px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .snapshot-item {
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.85);
-      padding: 9px 10px;
-    }
-
-    .snapshot-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 3px;
-    }
-
-    .snapshot-value {
-      font-weight: 600;
-      color: #e5e7ff;
-    }
-
-    .snapshot-note {
-      margin-top: 6px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .panel-footer {
-      margin-top: 6px;
-      padding-top: 8px;
-      border-top: 1px dashed rgba(148, 163, 184, 0.4);
-      font-size: 11px;
-      color: var(--text-soft);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .badge-hot {
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(22, 163, 74, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.6);
-      color: #bbf7d0;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    /* SECTIONS */
-
-    .section {
-      max-width: 1120px;
-      margin: 0 auto 72px auto;
-      padding: 0 20px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: flex-end;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: 0.9rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .section-kicker {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-      max-width: 360px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), #020617);
-      padding: 16px 16px 18px 16px;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
-    .card-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-
-    .card-tag {
-      display: inline-block;
-      margin-bottom: 8px;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-    }
-
-    /* PROCESS */
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      font-size: 0.9rem;
-    }
-
-    .step {
-      padding: 14px 16px;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background: rgba(15, 23, 42, 0.98);
-    }
-
-    .step-num {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent-gold);
-      margin-bottom: 5px;
-    }
-
-    .step-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .step-text {
-      color: var(--text-soft);
-    }
-
-    /* CONTACT SECTION */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 22px;
-      align-items: flex-start;
-    }
-
-    .contact-panel {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.98);
-      padding: 18px 18px 20px 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .contact-panel h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
-      font-size: 1rem;
-    }
-
-    .contact-panel p {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
-    .field {
-      margin-bottom: 10px;
-    }
-
-    .field label {
-      display: block;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .field input,
-    .field textarea,
-    .field select {
-      width: 100%;
-      padding: 9px 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: #020617;
-      color: var(--text-main);
-      font-size: 0.9rem;
-      font-family: inherit;
-    }
-
-    .field textarea {
-      resize: vertical;
-      min-height: 90px;
-    }
-
-    .field input:focus,
-    .field textarea:focus,
-    .field select:focus {
-      outline: none;
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 0 1px rgba(244, 196, 106, 0.4);
-    }
-
-    .contact-meta {
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
-    .contact-meta p {
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-
-    .contact-meta a {
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
-      padding: 16px 20px 22px 20px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-align: center;
-      background: #020308;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .hero-shell {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .steps {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 700px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-      .hero-shell {
-        margin-top: 28px;
-      }
-      .cards,
-      .steps {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+    :root{
+      --bg:#020308;
+      --panel:rgba(255,255,255,0.06);
+      --panel2:rgba(255,255,255,0.04);
+      --border:rgba(255,255,255,0.12);
+      --text:#f9fafb;
+      --muted:#cbd5f5;
+      --gold:#f4c46a;
+      --gold2:#e6a93c;
+      --shadow:0 32px 80px rgba(0,0,0,0.65);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(21,27,54,0.85) 0%, rgba(2,3,8,1) 55%),
+        radial-gradient(circle at 20% 30%, rgba(244,196,106,0.10) 0%, transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(244,196,106,0.08) 0%, transparent 55%);
+      color:var(--text);
+      padding:42px 16px;
+    }
+
+    .wrap{width:100%; max-width:980px; margin:0 auto;}
+    .topbar{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .brand .kicker{
+      font-size:12px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      opacity:.9;
+    }
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+    }
+    .brand h1 span{color:var(--gold)}
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.25);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:800;
+      font-size:13px;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(244,196,106,0.55)}
+    .btnGold{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      border:none;
+      color:#1a1a1a;
+    }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .vaultMeta{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .metaLine{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+    .metaLine strong{color:var(--gold)}
+    .notice{
+      background:rgba(244,196,106,0.10);
+      border:1px solid rgba(244,196,106,0.28);
+      border-radius:14px;
+      padding:12px 14px;
+      font-size:13px;
+      color:var(--text);
+      line-height:1.45;
+    }
+
+    .toolbar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      margin:18px 0 10px;
+    }
+    .search{
+      flex:1;
+      min-width:240px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:14px;
+      background:var(--panel2);
+      border:1px solid var(--border);
+    }
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background:transparent;
+      color:var(--text);
+      font-size:14px;
+    }
+    .pills{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.18);
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill.active{
+      border-color:rgba(244,196,106,0.55);
+      background:rgba(244,196,106,0.12);
+      color:var(--text);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (min-width: 820px){
+      .grid{grid-template-columns:1fr 1fr;}
+    }
+
+    .deal{
+      background:rgba(0,0,0,0.18);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      transition:transform .12s ease, border-color .12s ease;
+      min-height:170px;
+    }
+    .deal:hover{
+      transform:translateY(-2px);
+      border-color:rgba(244,196,106,0.45);
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:12px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.25);
+      letter-spacing:0.02em;
+    }
+    .badge.available{border-color:rgba(90,220,140,0.35); background:rgba(90,220,140,0.10);}
+    .badge.under{border-color:rgba(244,196,106,0.55); background:rgba(244,196,106,0.12);}
+    .badge.sold{border-color:rgba(255,255,255,0.22); background:rgba(255,255,255,0.06); opacity:0.9;}
+
+    .deal h3{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-0.01em;
+      line-height:1.2;
+    }
+    .deal .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:auto;
+    }
+    .stat{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:14px;
+      padding:10px 10px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.2;
+    }
+    .stat strong{
+      display:block;
+      color:var(--text);
+      font-size:13px;
+      margin-top:4px;
+      font-weight:900;
+    }
+
+    .dealActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .linkBtn{
+      flex:1;
+      min-width:140px;
+      text-align:center;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.22);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:900;
+      font-size:13px;
+      cursor:pointer;
+      transition:transform .12s ease;
+    }
+    .linkBtn:hover{transform:translateY(-1px)}
+    .linkBtn.gold{
+      border:none;
+      color:#1a1a1a;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+    }
+
+    .foot{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      opacity:0.95;
+    }
+    .foot a{color:var(--gold); text-decoration:none; font-weight:900;}
   </style>
 </head>
-<body>
- 
-<div class="page">
 
-  
-!-- NAVBAR -->
-  <header class="nav">
-    <div class="nav-inner">
-      <div class="nav-left">
-        <div class="logo-circle">PR</div>
-        <div class="logo-text">
-          <div class="logo-name">PERFECTION REI</div>
-          <div class="logo-sub">Perfection Real Estate Investors LLC</div>
-        </div>
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="kicker">Perfection REI • Private Inventory</div>
+        <h1>Deal <span>Vault</span></h1>
       </div>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#buybox">Buy Box</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="/offer.html">Submit an Offer</a>
-     
+      <div class="ctaRow">
+        <a class="btn" href="/nda.html">NDA</a>
+        <a class="btn btnGold" href="/offer.html">Submit an Offer</a>
       </div>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO + SNAPSHOT -->
-    <section class="hero-shell">
-      <div>
-        <div class="pill">
-          <span class="pill-dot"></span>
-          ACQUISITIONS • MULTIFAMILY • OFF-MARKET
+    <div class="card">
+      <div class="vaultMeta">
+        <div class="metaLine">
+          Access is limited to serious buyers. Some pages are <strong>NDA-gated</strong>.
         </div>
-        <h1 class="hero-title">
-          Precision real estate <span>for serious investors.</span>
-        </h1>
-        <p class="hero-sub">
-          Perfection REI sources, underwrites, and controls small-to-mid-size multifamily deals with discipline and transparency — so you can deploy capital into real assets with confidence.
-        </p>
-
-        <div class="hero-tags">
-          <div class="hero-tag">4–20 Unit Value-Add</div>
-          <div class="hero-tag">Section 8 & Workforce Housing</div>
-          <div class="hero-tag">B & C Class Multifamily</div>
+        <div class="notice">
+          Tip: Share the direct deal link (example: <strong>/offers/123-main-st.html</strong>). If a buyer hasn’t signed the NDA,
+          they’ll be redirected automatically.
         </div>
-
-        <div class="hero-actions">
-          <a href="#contact"><button class="btn-main">Submit a Deal or Inquiry</button></a>
-          <a href="#buybox"><button class="btn-ghost">View Our Buy Box</button></a>
-        </div>
-
-        <p class="hero-footnote">
-          Direct-to-owner conversations. Clean communication, clear numbers, no games. <span>Run by operator–investor Malik Marell.</span>
-        </p>
       </div>
 
-      <!-- Deal Snapshot Panel -->
-      <aside class="panel" aria-label="Sample deal snapshot">
-        <div class="panel-header">
-          <div class="panel-title">Sample Deal Snapshot</div>
-          <div class="panel-chip">Confidential – For Illustration Only</div>
+      <div class="toolbar">
+        <div class="search">
+          <span style="opacity:.85;">🔎</span>
+          <input id="search" type="text" placeholder="Search by address, city, or notes…" autocomplete="off" />
         </div>
 
-        <div class="snapshot-grid">
-          <div class="snapshot-item">
-            <div class="snapshot-label">Stabilized Cash-on-Cash</div>
-            <div class="snapshot-value">9.2%</div>
+        <div class="pills">
+          <div class="pill active" data-filter="all">All</div>
+          <div class="pill" data-filter="available">Available</div>
+          <div class="pill" data-filter="under">Under Contract</div>
+          <div class="pill" data-filter="sold">Sold</div>
+        </div>
+      </div>
+
+      <!-- DEAL GRID -->
+      <div class="grid" id="grid">
+
+        <!-- DEAL CARD (edit values + duplicate for each property) -->
+        <div class="deal" data-status="available" data-search="123 main st philadelphia pa 191xx off-market value-add">
+          <div class="row">
+            <div class="badge available">AVAILABLE</div>
+            <div style="color:var(--muted); font-size:12px;">NDA Required</div>
           </div>
-          <div class="snapshot-item">
-            <div class="snapshot-label">Equity Created</div>
-            <div class="snapshot-value">$185,000</div>
+
+          <h3>123 Main St — Philadelphia, PA</h3>
+          <p class="sub">Off-market value-add opportunity. Clean title. Quick close preferred.</p>
+
+          <div class="stats">
+            <div class="stat">Asking<strong>$149,900</strong></div>
+            <div class="stat">ARV<strong>$245,000</strong></div>
           </div>
-          <div class="snapshot-item">
-            <div class="snapshot-label">Units / ZIP</div>
-            <div class="snapshot-value">12 – North Philly</div>
-          </div>
-          <div class="snapshot-item">
-            <div class="snapshot-label">Hold Horizon</div>
-            <div class="snapshot-value">5–7 Years</div>
+
+          <div class="dealActions">
+            <a class="linkBtn" href="/nda.html?deal=/offers/123-main-st.html">View (NDA Gate)</a>
+            <a class="linkBtn gold" href="/offer.html">Submit Offer</a>
           </div>
         </div>
+        <!-- /DEAL CARD -->
 
-        <p class="snapshot-note">
-          After value-add and refi, returns are driven by disciplined underwriting, conservative debt, and strong management — not wishful thinking.
-        </p>
-
-        <div class="panel-footer">
-          <span>Off-market or distressed? We’ll underwrite it the same week.</span>
-          <span class="badge-hot">Now Reviewing Deals</span>
+        <!-- EXAMPLE: duplicate + edit for more deals (optional)
+        <div class="deal" data-status="under" data-search="456 oak ave camden nj brick duplex">
+          <div class="row">
+            <div class="badge under">UNDER CONTRACT</div>
+            <div style="color:var(--muted); font-size:12px;">NDA Required</div>
+          </div>
+          <h3>456 Oak Ave — Camden, NJ</h3>
+          <p class="sub">Brick duplex, strong rents, light rehab.</p>
+          <div class="stats">
+            <div class="stat">Asking<strong>$210,000</strong></div>
+            <div class="stat">ARV<strong>$310,000</strong></div>
+          </div>
+          <div class="dealActions">
+            <a class="linkBtn" href="/nda.html?deal=/offers/456-oak-ave.html">View (NDA Gate)</a>
+            <a class="linkBtn gold" href="/offer.html">Submit Offer</a>
+          </div>
         </div>
-      </aside>
-    </section>
+        -->
 
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="section-header">
-        <div>
-          <div class="section-title">What We Do</div>
-          <div class="section-kicker">Focused, operator-first services.</div>
-        </div>
-        <p class="section-sub">
-          We specialize in small and mid-sized multifamily in and around Philadelphia. Every conversation is grounded in numbers, execution, and respect for everyone at the table.
-        </p>
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-tag">Direct to Owner</div>
-          <h3 class="card-title">Acquisitions & Off-Market Deals</h3>
-          <p>
-            We buy properties directly from owners and brokers looking for a clean, credible buyer who understands the work. No drama, just clear communication and on-time closings.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Underwriting</div>
-          <h3 class="card-title">Deal Review for Investors</h3>
-          <p>
-            Need another set of eyes on a building? We stress-test rents, expenses, capex, and debt so investors can pass on bad deals and lean into the right ones.
-          </p>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Execution</div>
-          <h3 class="card-title">Hands-On Operations</h3>
-          <p>
-            As an owner-operator, we know what it takes after closing — turns, collections, tenant relations, compliance, and repositioning. Numbers on a spreadsheet must survive reality.
-          </p>
-        </article>
+      <div class="foot">
+        Confidential inventory • <a href="/nda.html">NDA</a> required for deal details • Direct to acquisitions
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- BUY BOX -->
-    <section id="buybox" class="section">
-      <div class="section-header">
-        <div>
-          <div class="section-title">Our Buy Box</div>
-          <div class="section-kicker">What we’re actively looking for.</div>
-        </div>
-        <p class="section-sub">
-          If your deal fits inside this box, we want to hear about it. If it’s close, we’ll still take a look — especially if there’s a story or value-add angle.
-        </p>
-      </div>
+  <script>
+    // Simple search + status filter for Deal Vault
+    const searchEl = document.getElementById('search');
+    const grid = document.getElementById('grid');
+    const pills = Array.from(document.querySelectorAll('.pill'));
 
-      <div class="cards">
-        <article class="card">
-          <h3 class="card-title">Asset Type & Size</h3>
-          <p>
-            4–20 unit multifamily. Mixed-use with solid residential over retail considered. Parking and storage are a plus.
-          </p>
-        </article>
-        <article class="card">
-          <h3 class="card-title">Location</h3>
-          <p>
-            Greater Philadelphia with a focus on North, West, and working-class submarkets. Strong transit, employment, or anchor-institution drivers.
-          </p>
-        </article>
-        <article class="card">
-          <h3 class="card-title">Deal Profile</h3>
-          <p>
-            Light to heavy value-add. Under-managed, under-market rents, or tired ownership. We like real problems with real upside.
-          </p>
-        </article>
-      </div>
-    </section>
+    let activeFilter = 'all';
 
-    <!-- PROCESS -->
-    <section id="process" class="section">
-      <div class="section-header">
-        <div>
-          <div class="section-title">How We Work</div>
-          <div class="section-kicker">Clear, disciplined process.</div>
-        </div>
-        <p class="section-sub">
-          Every deal follows the same rhythm: fast response, honest feedback, and straightforward next steps — even if the answer is “not a fit.”
-        </p>
-      </div>
+    function applyFilters(){
+      const q = (searchEl.value || '').trim().toLowerCase();
+      const deals = Array.from(grid.querySelectorAll('.deal'));
 
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">Step 01</div>
-          <div class="step-title">Quick Intake</div>
-          <p class="step-text">
-            Send the address, unit mix, current rents, and asking price. If you have photos, a rent roll, or OM, even better.
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">Step 02</div>
-          <div class="step-title">Underwriting & Feedback</div>
-          <p class="step-text">
-            We underwrite the deal quickly and tell you where we are: strong fit, edge case, or pass — and why.
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">Step 03</div>
-          <div class="step-title">Offer & Next Steps</div>
-          <p class="step-text">
-            If it works, we structure an offer that respects your time and our numbers. Clean terms, clear expectations, and a plan to get to the finish line.
-          </p>
-        </div>
-      </div>
-    </section>
+      deals.forEach(card => {
+        const status = card.getAttribute('data-status');
+        const hay = (card.getAttribute('data-search') || '').toLowerCase();
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="section-header">
-        <div>
-          <div class="section-title">Submit a Deal or Say Hello</div>
-          <div class="section-kicker">Let’s talk about your building.</div>
-        </div>
-        <p class="section-sub">
-          Whether you’re an owner, broker, or investor, share a few quick details and we’ll follow up. No pressure, no spam — just a conversation.
-        </p>
-      </div>
+        const matchStatus = (activeFilter === 'all') ? true : (status === activeFilter);
+        const matchSearch = q.length === 0 ? true : hay.includes(q);
 
-      <div class="contact-grid">
-        <div class="contact-panel">
-          <h3>Deal / Inquiry Form</h3>
-          <p>Fill this out and it will open an email to Malik with your answers pre-loaded.</p>
+        card.style.display = (matchStatus && matchSearch) ? 'flex' : 'none';
+      });
+    }
 
-          <form onsubmit="
-            const p = new URLSearchParams(new FormData(this));
-            const body = encodeURIComponent(
-              'Name: ' + p.get('name') + '\n' +
-              'Role: ' + p.get('role') + '\n' +
-              'Email: ' + p.get('email') + '\n' +
-              'Phone: ' + p.get('phone') + '\n' +
-              'Property Address: ' + p.get('address') + '\n' +
-              'Units: ' + p.get('units') + '\n' +
-              'Current Rents / Income: ' + p.get('rents') + '\n' +
-              'Asking Price / Range: ' + p.get('price') + '\n' +
-              'Timing or Notes: ' + p.get('notes')
-            );
-            window.location.href = 'mailto:malik@perfectionrei.com?subject=' +
-              encodeURIComponent('Deal / Inquiry - Perfection REI') +
-              '&body=' + body;
-            return false;
-          ">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required>
-            </div>
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        pills.forEach(x => x.classList.remove('active'));
+        p.classList.add('active');
+        activeFilter = p.getAttribute('data-filter');
+        applyFilters();
+      });
+    });
 
-            <div class="field">
-              <label for="role">You are...</label>
-              <select id="role" name="role">
-                <option value="Owner">Owner</option>
-                <option value="Broker / Agent">Broker / Agent</option>
-                <option value="Investor">Investor</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required>
-            </div>
-
-            <div class="field">
-              <label for="phone">Phone (optional)</label>
-              <input id="phone" name="phone" placeholder="Best number to reach you">
-            </div>
-
-            <div class="field">
-              <label for="address">Property Address / Area</label>
-              <input id="address" name="address" placeholder="Street, city, ZIP">
-            </div>
-
-            <div class="field">
-              <label for="units">Units</label>
-              <input id="units" name="units" placeholder="e.g. 8-unit, 12-unit walk-up">
-            </div>
-
-            <div class="field">
-              <label for="rents">Current Rents / Income</label>
-              <textarea id="rents" name="rents" placeholder="Avg rent per unit or total monthly income"></textarea>
-            </div>
-
-            <div class="field">
-              <label for="price">Asking Price / Range</label>
-              <input id="price" name="price" placeholder="e.g. $850,000 or best offer">
-            </div>
-
-            <div class="field">
-              <label for="notes">Timing / Notes</label>
-              <textarea id="notes" name="notes" placeholder="Vacancy, renovations needed, timing, anything else we should know."></textarea>
-            </div>
-
-            <button type="submit" class="btn-main" style="margin-top:8px;">
-              Open Email to Submit Deal
-            </button>
-          </form>
-        </div>
-<!-- ========================= -->
-<!-- NEW DEAL SUBMISSION FORM -->
-<!-- ========================= -->
-
-<section id="submit-deal" style="padding:60px 0; border-top:1px solid #333; margin-top:40px;">
-    <h2 style="color:#f5b953; font-size:32px; margin-bottom:20px;">Submit a Deal or Inquiry</h2>
-
-    <p style="max-width:650px; color:#ddd; margin-bottom:25px;">
-        Submit off-market opportunities or multifamily deals (4–20 units).  
-        Provide the address, current rents, seller details, and we’ll underwrite it quickly.
-    </p>
-
-    <form action="https://formsubmit.co/d22384b1f719aab6a223f1cfc31243a2" method="POST" style="max-width:620px;">
-<input type="hidden" name="_next" value="https://perfectionrei.com/success.html">
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Deal Submission from PerfectionREI.com">
-        <input type="hidden" name="_template" value="table">
-
-        <!-- Name + Email -->
-        <div style="display:flex; gap:16px; margin-bottom:15px; flex-wrap:wrap;">
-            <div style="flex:1; min-width:220px;">
-                <label style="color:#ccc;">Your Name</label>
-                <input type="text" name="name" required 
-                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
-            </div>
-
-            <div style="flex:1; min-width:220px;">
-                <label style="color:#ccc;">Your Email</label>
-                <input type="email" name="email" required 
-                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
-            </div>
-        </div>
-
-        <!-- Property Address -->
-        <label style="color:#ccc;">Property Address</label>
-        <input type="text" name="address" required
-               style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555; margin-bottom:15px;">
-
-        <!-- Units + Asking Price -->
-        <div style="display:flex; gap:16px; margin-bottom:15px; flex-wrap:wrap;">
-            <div style="flex:1; min-width:220px;">
-                <label style="color:#ccc;"># Units</label>
-                <input type="text" name="units" 
-                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
-            </div>
-
-            <div style="flex:1; min-width:220px;">
-                <label style="color:#ccc;">Asking Price (optional)</label>
-                <input type="text" name="price" 
-                       style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555;">
-            </div>
-        </div>
-
-        <!-- Notes -->
-        <label style="color:#ccc;">Notes, rents, seller details, or anything helpful</label>
-        <textarea name="notes" rows="6"
-                  style="width:100%; padding:10px; background:#111; color:#fff; border:1px solid #555; margin-bottom:20px;"></textarea>
-
-        <!-- Submit Button -->
-        <button type="submit"
-                style="background:#f5b953; color:#111; padding:12px 28px; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">
-            Submit Deal
-        </button>
-    </form>
-</section>
-        <div class="contact-meta">
-          <p><strong>Direct contact</strong></p>
-          <p>
-            Email: <a href="mailto:malik@perfectionrei.com">malik@perfectionrei.com</a><br>
-            Phone: <a href="tel:12679240612">267-924-0612</a>
-          </p>
-          <p>
-            Based in Philadelphia, PA.<br>
-            Focused on multifamily and small mixed-use assets in the greater Philly region.
-          </p>
-          <p>
-            If you’d rather skip the form, just email the address, unit mix, current rents, and your best idea of price. We’ll take it from there.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-</div>
-</main>
-
-
-
-
-</script>
+    searchEl.addEventListener('input', applyFilters);
+    applyFilters();
+  </script>
 </body>
 </html>
