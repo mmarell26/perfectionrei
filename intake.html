@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Intake | Perfection REI</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background: #020308;
+      color: #f9fafb;
+      padding: 40px 16px;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #cbd5f5;
+      margin-bottom: 24px;
+    }
+
+    .box {
+      background: #0b1220;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: #020308;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      margin-top: 24px;
+      width: 100%;
+      padding: 14px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 800;
+      font-size: 15px;
+      background: linear-gradient(135deg,#f4c46a,#e6a93c);
+      color: #1a1a1a;
+      cursor: pointer;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Property Intake</h1>
+    <p>
+      This form allows us to review your property efficiently and determine next steps.
+      Completion typically takes 3–5 minutes.
+    </p>
+
+    <div class="box">
+      <form onsubmit="submitIntake(event)">
+        <label>Property Address</label>
+        <input required />
+
+        <label>City / State</label>
+        <input required />
+
+        <label>Asking Price (if any)</label>
+        <input />
+
+        <label>Condition / Repairs Needed</label>
+        <textarea></textarea>
+
+        <label>Timeline to Sell</label>
+        <input />
+
+        <label>Your Name</label>
+        <input required />
+
+        <label>Email</label>
+        <input type="email" required />
+
+        <label>Phone</label>
+        <input required />
+
+        <button type="submit">Submit Intake</button>
+      </form>
+
+      <div class="note">
+        Submission does not constitute an offer. We will follow up after review.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function submitIntake(e) {
+      e.preventDefault();
+      alert("Thank you. Your intake has been received. We will follow up shortly.");
+      window.location.href = "/success.html";
+    }
+  </script>
+</body>
+</html>
