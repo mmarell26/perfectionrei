@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Submission Received | Perfection REI</title>
+  <title>Property Submission | Perfection REI</title>
 
   <style>
     body {
@@ -19,50 +19,99 @@
     }
 
     .card {
-      max-width:600px;
+      max-width:520px;
       width:100%;
       background:rgba(255,255,255,0.05);
       border:1px solid rgba(255,255,255,0.12);
       border-radius:16px;
-      padding:32px;
+      padding:28px;
     }
 
-    h1 { margin-bottom:12px; }
-    p { color:#cbd5e1; line-height:1.6; }
+    h1 { margin-bottom:6px; }
+    p { color:#cbd5e1; font-size:14px; }
 
-    .highlight {
-      margin:20px 0;
-      padding:14px;
-      border-left:4px solid #facc15;
+    label {
+      display:block;
+      margin-top:16px;
+      font-size:13px;
       color:#e5e7eb;
-      background:rgba(255,255,255,0.03);
     }
 
-    ul { margin-top:12px; color:#e5e7eb; }
-    li { margin-bottom:8px; }
+    input, select {
+      width:100%;
+      margin-top:6px;
+      padding:12px;
+      border-radius:8px;
+      border:none;
+      background:#020308;
+      color:#f9fafb;
+      border:1px solid rgba(255,255,255,0.15);
+    }
+
+    button {
+      margin-top:24px;
+      width:100%;
+      padding:14px;
+      border-radius:999px;
+      border:none;
+      background:linear-gradient(135deg,#facc15,#eab308);
+      font-weight:800;
+      cursor:pointer;
+      color:#111827;
+    }
+
+    .notice {
+      margin-top:14px;
+      font-size:12px;
+      text-align:center;
+      color:#cbd5e1;
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
-    <h1>Submission Received</h1>
+    <h1>Submit a Property</h1>
+    <p>We review off-market and direct opportunities.</p>
 
-    <div class="highlight">
-      Submission does not guarantee an offer. All properties are reviewed internally.
-    </div>
+    <form onsubmit="handleSubmit(event)">
+      <label>Full Name
+        <input required />
+      </label>
 
-    <p><strong>What happens next:</strong></p>
+      <label>Email
+        <input type="email" required />
+      </label>
 
-    <ul>
-      <li>Your property is reviewed by our acquisitions team</li>
-      <li>We evaluate pricing, condition, and exit strategy</li>
-      <li>If it fits our criteria, you’ll be contacted directly</li>
-    </ul>
+      <label>Property Address
+        <input required />
+      </label>
 
-    <p>
-      We do not make offers on every submission.  
-      If selected, communication will come directly from our team.
-    </p>
+      <label>Asking Price
+        <input />
+      </label>
+
+      <label>Property Condition
+        <select>
+          <option>Livable</option>
+          <option>Needs Light Rehab</option>
+          <option>Heavy Rehab</option>
+        </select>
+      </label>
+
+      <button type="submit">Submit Property</button>
+
+      <div class="notice">
+        Submission does not guarantee an offer. All properties are reviewed internally.
+      </div>
+    </form>
   </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      window.location.href = "/intake-next.html";
+    }
+  </script>
 </body>
 </html>
