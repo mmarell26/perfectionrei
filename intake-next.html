@@ -3,139 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Next Steps | Perfection REI</title>
+  <title>Submission Received | Perfection REI</title>
+
   <style>
-    :root{
-      --bg:#020308;
-      --panel:rgba(255,255,255,.06);
-      --border:rgba(255,255,255,.12);
-      --text:#f9fafb;
-      --muted:#cbd5f5;
-      --gold:#f4c46a;
-      --radius:16px;
-    }
-    body{
+    body {
       margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-      background:radial-gradient(circle at top, #151b36 0%, var(--bg) 55%);
-      color:var(--text);
-      padding:48px 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background:#020308;
+      color:#f9fafb;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:24px;
     }
-    .wrap{max-width:900px;margin:auto;}
-    .card{
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:26px;
-      box-shadow:0 32px 80px rgba(0,0,0,.55);
+
+    .card {
+      max-width:600px;
+      width:100%;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:16px;
+      padding:32px;
     }
-    h1{margin:0 0 10px;}
-    p{color:var(--muted);line-height:1.5;margin:0 0 14px;}
-    .steps{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px;}
-    .step{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:12px;padding:14px;
-    }
-    .step b{color:var(--gold);}
-    .receipt{
-      margin-top:18px;
+
+    h1 { margin-bottom:12px; }
+    p { color:#cbd5e1; line-height:1.6; }
+
+    .highlight {
+      margin:20px 0;
       padding:14px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.20);
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      font-size:12px;
-      white-space:pre-wrap;
-      word-break:break-word;
+      border-left:4px solid #facc15;
       color:#e5e7eb;
+      background:rgba(255,255,255,0.03);
     }
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
-    button,a{
-      text-decoration:none;
-      display:inline-block;
-      padding:12px 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background:transparent;
-      color:#e5e7eb;
-      font-weight:800;
-      cursor:pointer;
-    }
-    button.primary{
-      border:none;
-      background:linear-gradient(135deg, var(--gold), #e6a93c);
-      color:#1a1a1a;
-    }
-    .fine{font-size:12px;color:#94a3b8;margin-top:14px;line-height:1.4;}
+
+    ul { margin-top:12px; color:#e5e7eb; }
+    li { margin-bottom:8px; }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="card">
-      <h1>Intake Received</h1>
-      <p>Your submission was saved. Here is what happens next.</p>
+  <div class="card">
+    <h1>Submission Received</h1>
 
-      <ul class="steps">
-        <li class="step"><b>Step 1 — Initial Review</b><br/>We review the details and confirm fit.</li>
-        <li class="step"><b>Step 2 — Follow-up</b><br/>We contact you to verify missing details and discuss next steps.</li>
-        <li class="step"><b>Step 3 — Path Forward</b><br/>Walkthrough, pricing discussion, or next action depending on situation.</li>
-      </ul>
-
-      <div class="fine">
-        Receipt (copy/download for your records):
-      </div>
-      <div class="receipt" id="receipt">Loading…</div>
-
-      <div class="btnrow">
-        <button class="primary" id="copyBtn">Copy Receipt</button>
-        <button id="downloadBtn">Download JSON</button>
-        <a href="/intake.html">Submit Another Property</a>
-        <a href="/">Back to Main Site</a>
-      </div>
-
-      <div class="fine">
-        Note: This is a static intake. If you want automatic routing later, we can add it without changing the look.
-      </div>
+    <div class="highlight">
+      Submission does not guarantee an offer. All properties are reviewed internally.
     </div>
+
+    <p><strong>What happens next:</strong></p>
+
+    <ul>
+      <li>Your property is reviewed by our acquisitions team</li>
+      <li>We evaluate pricing, condition, and exit strategy</li>
+      <li>If it fits our criteria, you’ll be contacted directly</li>
+    </ul>
+
+    <p>
+      We do not make offers on every submission.  
+      If selected, communication will come directly from our team.
+    </p>
   </div>
-
-  <script>
-    function download(filename, text) {
-      const el = document.createElement("a");
-      el.setAttribute("href", "data:application/json;charset=utf-8," + encodeURIComponent(text));
-      el.setAttribute("download", filename);
-      document.body.appendChild(el);
-      el.click();
-      el.remove();
-    }
-
-    const raw = localStorage.getItem("pr_last_intake");
-    const data = raw ? JSON.parse(raw) : null;
-
-    const receiptEl = document.getElementById("receipt");
-    if (!data) {
-      receiptEl.textContent = "No receipt found. Please submit the intake again.";
-    } else {
-      const pretty = JSON.stringify(data, null, 2);
-      receiptEl.textContent = pretty;
-
-      document.getElementById("copyBtn").addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(pretty);
-          document.getElementById("copyBtn").textContent = "Copied";
-          setTimeout(()=>{ document.getElementById("copyBtn").textContent="Copy Receipt"; }, 1200);
-        } catch (e) {
-          alert("Copy blocked on this device. Please select the text and copy manually.");
-        }
-      });
-
-      document.getElementById("downloadBtn").addEventListener("click", () => {
-        const ts = (data.submitted_at || new Date().toISOString()).replace(/[:.]/g,"-");
-        const file = `perfectionrei-intake-${ts}.json`;
-        download(file, JSON.stringify(data, null, 2));
-      });
-    }
-  </script>
 </body>
 </html>
