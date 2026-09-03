@@ -1,75 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>123 Main St | Perfection REI</title>
-
-  <script>
-    // HARD GATE — DO NOT REMOVE
-    if (localStorage.getItem("ndaAccepted") !== "true") {
-      window.location.href = "/nda.html?deal=/offers/123-main-st.html";
-    }
-  </script>
-
-  <style>
-    body {
-      margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-      background:#020308;
-      color:#f9fafb;
-      padding:40px 16px;
-    }
-
-    .wrap {
-      max-width:900px;
-      margin:auto;
-    }
-
-    h1 { margin-bottom:6px; }
-    .meta { color:#cbd5f5; margin-bottom:20px; }
-
-    .box {
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.12);
-      border-radius:16px;
-      padding:24px;
-      margin-bottom:24px;
-    }
-
-    a.button {
-      display:inline-block;
-      margin-top:12px;
-      padding:12px 22px;
-      border-radius:999px;
-      background:linear-gradient(135deg,#f4c46a,#e6a93c);
-      color:#111;
-      font-weight:800;
-      text-decoration:none;
-    }
-  </style>
-</head>
-<body>
-
-<div class="wrap">
-  <h1>123 Main St — Philadelphia, PA</h1>
-  <div class="meta">
-    Asking: $149,900 • ARV: $245,000 • Close ASAP
-  </div>
-
-  <div class="box">
-    <h3>Deal Summary</h3>
-    <p>
-      Off-market value-add opportunity in a strong rental corridor.
-      Clean title. Quick close preferred.
-    </p>
-  </div>
-
-  <div class="box">
-    <h3>Access & Offers</h3>
-    <a class="button" href="/offer.html">Submit Offer</a>
-  </div>
-</div>
-
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confidentiality Agreement | Perfection REI</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/perfectionrei_favicon.png" type="image/png">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#03050b;color:#f7f8fb;font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}.card{width:min(620px,100%);background:#0b1020;border:1px solid rgba(255,255,255,.13);border-radius:22px;padding:clamp(24px,5vw,40px)}h1{margin:0 0 12px}p,li{color:#b8c2d8}label{display:flex;gap:12px;align-items:flex-start;margin:24px 0}input{margin-top:5px;transform:scale(1.2)}button{width:100%;padding:14px;border:0;border-radius:999px;background:linear-gradient(135deg,#f4c46a,#dfa13a);font-weight:900;color:#18130a;cursor:pointer}a{color:#f4c46a}</style></head>
+<body><main class="card"><h1>Confidential deal access</h1><p>Before viewing private deal information, please confirm that you will keep all non-public property, pricing, seller, and financial information confidential and use it only to evaluate a potential transaction.</p>
+<ul><li>Do not contact the owner, occupants, or related parties without written permission.</li><li>Do not distribute confidential materials without written approval.</li><li>Conduct your own due diligence before making an investment decision.</li></ul>
+<form id="ndaForm"><label><input id="accept" type="checkbox" required><span>I understand and agree to these confidentiality terms.</span></label><button type="submit">Accept and Continue</button></form><p><a href="/">Return home</a></p></main>
+<script>const params=new URLSearchParams(location.search);const requested=params.get("deal")||"/offers/";const safe=requested.startsWith("/offers/")?requested:"/offers/";document.getElementById("ndaForm").addEventListener("submit",function(e){e.preventDefault();localStorage.setItem("ndaAccepted","true");location.href=safe;});</script></body></html>
